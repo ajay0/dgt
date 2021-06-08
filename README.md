@@ -1,0 +1,34 @@
+## Setup
+
+1. Install necessary packages
+
+Create a new conda environment named `dgt_env` with `python==3.6.8`, `pytorch==1.7.0` and install all dependencies inside:
+
+```
+$ conda env create -f dgt_env.yml
+$ conda activate dgt_env
+```
+
+3. Change working directory to `src`:
+
+```
+$ cd src
+```
+
+4. Run the algorithm
+
+To reproduce some of our results, please run `bash run.sh`.
+- The script by default runs our algorithm with height 6 on `ailerons`. Commands for `abalone`, `satimage`, and `pendigits` are commented out.
+- To change height of the tree learnt, change the argument corresponding to `--height` flag.
+- The `--proc_per_gpu` option denotes how many processes to run per GPU. It defaults to 4 which is ideal for a typical GPU but on a GPU with small memory, reducing it from 4 might be required.
+- The `--num_gpu` option denotes how many GPUs to parallelize over (and assumes device ordinal of GPUs start with 0). It defaults to 1.
+
+Note: For `abalone` dataset we report the final performance across 5 different shuffles.
+
+5. Check Results
+
+Final scores, i.e. mean test RMSE/Accuracy and standard deviation, can be found in the file `./out/exp@{dataset}_{height}@{start_time}/meanstd-exps/meanstd-run-summary.csv` under the columns `test_acc_mean` and `test_acc_std`.
+
+## Other Contributors
+
+[Naman Jain](https://github.com/Naman-ntc)

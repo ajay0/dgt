@@ -1,3 +1,6 @@
+## Paper
+[Learning Accurate Decision Trees with Bandit Feedback via Quantized Gradient Descent](https://arxiv.org/abs/2102.07567)
+
 ## Setup
 
 1. Install necessary packages
@@ -9,13 +12,13 @@ $ conda env create -f dgt_env.yml
 $ conda activate dgt_env
 ```
 
-3. Change working directory to `src`:
+2. Change working directory to `src`:
 
 ```
 $ cd src
 ```
 
-4. Run the algorithm
+3. Run the algorithm
 
 To reproduce some of our results, please run `bash run.sh`.
 - The script by default runs our algorithm with height 6 on `ailerons`. Commands for `abalone`, `satimage`, and `pendigits` are commented out.
@@ -25,7 +28,7 @@ To reproduce some of our results, please run `bash run.sh`.
 
 Note: For `abalone` dataset we report the final performance across 5 different shuffles.
 
-5. Check Results
+4. Check Results
 
 Final scores, i.e. mean test RMSE/Accuracy and standard deviation, can be found in the file `./out/exp@{dataset}_{height}@{start_time}/meanstd-exps/meanstd-run-summary.csv` under the columns `test_acc_mean` and `test_acc_std`.
 
